@@ -1,0 +1,29 @@
+{% extends "blog1/base.html" %}
+{% block content %}
+{% if registered %}
+  <h1>Thank you for registering</h1>
+  {% else %}
+
+  <div class="container">
+    <div class="jumbotron">
+
+
+      <form method='POST'>
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="form-group">
+              {{field.label}}
+              {{field}}
+
+            </div>
+
+            <p></p>
+            {% endfor %}
+              <input type="submit" name="" value="register">
+      </form>
+
+    </div>
+
+  </div>
+  {% endif %}
+{% endblock %}

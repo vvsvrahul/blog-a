@@ -1,0 +1,30 @@
+{% extends "blog1/base.html" %}
+
+
+
+    {% block content %}
+    <div class="container " id='rahul'>
+      <h1>Posts:</h1>
+      
+    </div>
+
+    {% for item in lists %}
+    <div class="container">
+      <div class="jumbotron" id="what">
+        <h1 class='hello' id='luhar' >{{item.title}}</h1>
+        <textarea name="name" readonly rows="8" cols="80" class='form-control ' id='story'>
+
+          {{item.story}}
+
+        </textarea>
+        <div class="storyby">
+            <small >Story by:<p>{{item.author}}</p></small>
+        </div>
+
+
+      </div>
+
+    </div>
+    {% endfor %}
+
+    {% endblock %}
